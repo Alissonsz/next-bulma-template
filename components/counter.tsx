@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+import styles from './Counter.module.scss';
+import classNames from 'classnames';
 
 export default function Counter() {
   const [count, setCount] = useState(0);
@@ -9,14 +11,19 @@ export default function Counter() {
 
   function handleAlertClick() {
     setTimeout(() => {
-      alert("You clicked on: " + count);
+      alert('You clicked on: ' + count);
     }, 1000);
   }
 
   return (
-    <div>
+    <div className="is-flex is-flex-direction-column">
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
+      <button
+        className={classNames(styles.counter, 'button is-primary')}
+        onClick={() => setCount(count + 1)}
+      >
+        Click me
+      </button>
       <button onClick={handleAlertClick}>Show alert</button>
     </div>
   );
