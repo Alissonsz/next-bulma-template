@@ -6,8 +6,8 @@ const TodosList = () => {
 
   return (
     <div>
-      {todos?.map((todo) => {
-        return <p>{todo.name}</p>;
+      {todos?.map((todo, index) => {
+        return <p key={index} >{todo.name}</p>;
       })}
     </div>
   );

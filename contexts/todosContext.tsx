@@ -8,7 +8,7 @@ interface ITodo {
 interface ITodoContext {
   todos: ITodo[];
   setTodos;
-  addTodo: (ITodo) => any;
+  addTodo: (ITodo) => void;
 }
 
 const TodosContext = createContext({} as ITodoContext);
